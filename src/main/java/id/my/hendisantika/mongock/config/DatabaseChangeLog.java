@@ -27,7 +27,7 @@ import static id.my.hendisantika.mongock.model.ExpenseCategory.UTILITIES;
  */
 @ChangeLog
 public class DatabaseChangeLog {
-    @ChangeSet(order = "001", id = "seedDatabase", author = "Sai")
+    @ChangeSet(order = "001", id = "seedDatabase", author = "Yu71")
     public void seedDatabase(ExpenseRepository expenseRepository) {
         List<Expense> expenseList = new ArrayList<>();
         expenseList.add(createNewExpense("Movie Tickets", ENTERTAINMENT, BigDecimal.valueOf(40)));
