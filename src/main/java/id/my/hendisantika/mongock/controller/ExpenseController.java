@@ -1,7 +1,12 @@
 package id.my.hendisantika.mongock.controller;
 
+import id.my.hendisantika.mongock.model.Expense;
 import id.my.hendisantika.mongock.service.ExpenseService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,9 +21,15 @@ import org.springframework.web.bind.annotation.RestController;
  * To change this template use File | Settings | File Templates.
  */
 @RestController
-@RequestMapping("/expense")
+@RequestMapping("/api/expenses")
 @RequiredArgsConstructor
 public class ExpenseController {
 
     private final ExpenseService expenseService;
+
+    @PostMapping
+    public ResponseEntity addExpense(@RequestBody Expense expense) {
+        expenseService.addExpense(expense);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
 }
