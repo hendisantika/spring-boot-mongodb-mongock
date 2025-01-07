@@ -6,8 +6,10 @@
 2. Go to the folder: `cd spring-boot-mongodb-mongock`
 3. Run the application: `mvn clean spring-boot:run`
 4. Open your favorite browser: http://localhost:8080/api/expenses
-5. Check the console logs
-6. Enjoy the result!
+5. Swagger UI: http://localhost:8080/swagger-ui
+6. Import POSTMAN Collection: `Spring Boot Mongock.postman_collection.json`
+7. Check the console logs
+8. Enjoy the result!
 
 ### Console Logs
 
