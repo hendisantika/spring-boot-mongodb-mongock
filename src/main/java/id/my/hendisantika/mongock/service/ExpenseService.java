@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * Project : spring-boot-mongock-demo
@@ -40,4 +42,9 @@ public class ExpenseService {
         return expenseRepository.findByName(name)
                 .orElseThrow(() -> new RuntimeException(String.format("Cannot Find Expense by Name - %s", name)));
     }
+
+    public List<Expense> getAllExpenses() {
+        return expenseRepository.findAll();
+    }
+
 }
