@@ -1,5 +1,6 @@
 package id.my.hendisantika.mongock.service;
 
+import id.my.hendisantika.mongock.model.Expense;
 import id.my.hendisantika.mongock.repository.ExpenseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,4 +22,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class ExpenseService {
 
     private final ExpenseRepository expenseRepository;
+
+    public void addExpense(Expense expense) {
+        expenseRepository.insert(expense);
+    }
 }
