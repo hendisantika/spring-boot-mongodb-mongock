@@ -3,6 +3,7 @@ package id.my.hendisantika.mongock.config;
 import com.github.cloudyrock.mongock.ChangeLog;
 import com.github.cloudyrock.mongock.ChangeSet;
 import id.my.hendisantika.mongock.model.Expense;
+import id.my.hendisantika.mongock.model.ExpenseCategory;
 import id.my.hendisantika.mongock.repository.ExpenseRepository;
 
 import java.math.BigDecimal;
@@ -36,5 +37,13 @@ public class DatabaseChangeLog {
         expenseList.add(createNewExpense("Internet", UTILITIES, BigDecimal.valueOf(30)));
 
         expenseRepository.insert(expenseList);
+    }
+
+    private Expense createNewExpense(String expenseName, ExpenseCategory expenseCategory, BigDecimal amount) {
+        Expense expense = new Expense();
+        expense.setExpenseName(expenseName);
+        expense.setExpenseAmount(amount);
+        expense.setExpenseCategory(expenseCategory);
+        return expense;
     }
 }
