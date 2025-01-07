@@ -47,4 +47,8 @@ public class ExpenseService {
         return expenseRepository.findAll();
     }
 
+    public void deleteExpense(String id) {
+        expenseRepository.deleteById(id);
+    }
+
 }
