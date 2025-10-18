@@ -15,7 +15,7 @@
     <description>spring-boot-mongock-demo</description>
     <properties>
         <java.version>23</java.version>
-        <testcontainers.version>2.0.0</testcontainers.version>
+        <testcontainers.version>2.0.1</testcontainers.version>
         <lombok.version>1.18.42</lombok.version>
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
         <maven.compiler.proc>full</maven.compiler.proc>
