@@ -39,13 +39,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    # Dependabot PRs cannot read Actions secrets; they fall back to the runner's local Docker
-    - name: Setup Testcontainers Cloud Client
-      if: github.actor != 'dependabot[bot]'
-      uses: atomicjar/testcontainers-cloud-setup-action@v1
-      with:
-        token: ${{ secrets.TC_CLOUD_TOKEN }}
-
+    # Testcontainers uses the Docker engine preinstalled on GitHub-hosted Ubuntu runners
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
