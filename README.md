@@ -66,7 +66,7 @@ Integration tests start a real MongoDB using Testcontainers, so Docker must be r
 ### CI/CD & Dependency Updates
 
 - **GitHub Actions** (`.github/workflows/maven.yml`) builds and tests the project on JDK 25 for every push and pull
-  request to `main`, using Testcontainers Cloud when the `TC_CLOUD_TOKEN` secret is available.
+  request to `main`; Testcontainers runs on the runner's Docker engine.
 - **Dependabot** (`.github/dependabot.yml`) keeps Maven dependencies, GitHub Actions and Docker Compose images up to
   date, with grouped PRs (Spring Boot, springdoc, Mongock, Testcontainers, Maven plugins, minor/patch) and conventional
   commit prefixes.
